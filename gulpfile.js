@@ -23,11 +23,16 @@ function imageneswebp() {
     .pipe(dest('build/img'))
 }
 function imagenesavif() {
-  const opciones ={
-    quality:30
+  const opciones = 
+    {
+      quality: 50,
+      lossless: false,
+      speed: 0,
+      chromaSubsampling: '4:2:0'
   }
+  
   return src('src/img/**/*.{png,jpg}')
-    .pipe(avif({opciones}))
+    .pipe(avif(opciones))
     .pipe(dest('build/img'))
 }
 function dev() {
@@ -37,7 +42,7 @@ function dev() {
 }
 exports.css = css;
 exports.dev = dev;
-exports.imageneswebp = imageneswebp;  
+exports.imageneswebp = imageneswebp;
 exports.imagenesavif = imagenesavif;
 exports.imagenes = imagenes;
-exports.default = series(imagenes, imageneswebp,imagenesavif, css, dev);
+exports.default = series(imagenes, imageneswebp, imagenesavif, css, dev);
