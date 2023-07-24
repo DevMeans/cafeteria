@@ -45,4 +45,4 @@ exports.dev = dev;
 exports.imageneswebp = imageneswebp;
 exports.imagenesavif = imagenesavif;
 exports.imagenes = imagenes;
-exports.default = series(imagenes, imageneswebp, imagenesavif, css, dev);
+exports.default = series( css, dev);
