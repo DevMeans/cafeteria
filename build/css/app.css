@@ -348,6 +348,7 @@ a {
 img {
   max-width: 100%;
   display: block;
+  height: auto;
 }
 
 ul {
@@ -423,6 +424,8 @@ h3 {
 .header {
   padding: 5rem 0;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media (min-width: 768px) {
   .header {
@@ -458,6 +461,10 @@ h3 {
 /*header de cada pagina*/
 .header-inicio {
   background-image: url(../img/header_inicio.jpg);
+}
+
+.header-nosotros {
+  background-image: url(../img/header_nosotros.jpg);
 }
 
 .nav-principal {
@@ -733,4 +740,32 @@ h3 {
   font-size: 3.4rem;
   color: #5e311e;
   font-family: "Bona Nova", serif;
+}
+
+@media (min-width: 768px) {
+  .contenido-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+.contenido-nosotros .imagen {
+  margin-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .contenido-nosotros .imagen {
+    margin-bottom: 0;
+  }
+}
+.contenido-nosotros .imagen img {
+  margin: 0 auto;
+  transform: rotate(-6deg);
+  border: 3rem solid #fff;
+  box-shadow: 9px 10px 5px -7px rgba(0, 0, 0, 0.35);
+}
+.contenido-nosotros .texto blockquote {
+  margin: 0;
+  padding: 1rem;
+  border-left: 0.5rem solid #5e311e;
+  font-size: 2rem;
 }

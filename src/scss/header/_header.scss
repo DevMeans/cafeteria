@@ -5,7 +5,8 @@
     padding: 5rem 0;
     position: relative;
    // @include m.color;
-
+    background-repeat: no-repeat;
+    background-size: cover;
     @include m.tablet{
         min-height: 70rem;
     }
@@ -38,4 +39,7 @@
 .header-inicio{
     background-image: url(../img/header_inicio.jpg);
   //  @include m.bgColor(yellow);
+}
+.header-nosotros{
+    background-image: url(../img/header_nosotros.jpg);
 }
