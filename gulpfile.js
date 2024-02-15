@@ -49,4 +49,4 @@ exports.imageneswebp = imageneswebp;
 exports.imagenesavif = imagenesavif;
 exports.imagenes = imagenes;
 exports.default = series(css, dev);
-exports.build = series(css, imagenes, webpImages, avifImages);
+exports.build = series(css, imagenes, imageneswebp, imagenesavif);
