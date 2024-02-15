@@ -25,5 +25,8 @@
   "browsersList": [
     "last 2 versions",
     "> 0.2%"
-  ]
+  ],
+  "dependencies": {
+    "sharp": "^0.33.2"
+  }
 }

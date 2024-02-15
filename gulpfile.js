@@ -15,16 +15,16 @@ function css(done) {
     .pipe(sass({ outputStyle: "expanded" }))
     .pipe(postcss([autoprefixer(),cssnano()]))
     .pipe(sourcemaps.write("."))
-    .pipe(dest("build/css"));
+    .pipe(dest("dist/css"));
   done();
 }
 function imagenes() {
   return src("src/img/**/*")
     .pipe(imagenmin({ optimizationLevel: 3 }))
-    .pipe(dest("build/img"));
+    .pipe(dest("dist/img"));
 }
 function imageneswebp() {
-  return src("src/img/**/*.{png,jpg}").pipe(webp()).pipe(dest("build/img"));
+  return src("src/img/**/*.{png,jpg}").pipe(webp()).pipe(dest("dist/img"));
 }
 function imagenesavif() {
   const opciones = {
@@ -36,7 +36,7 @@ function imagenesavif() {
 
   return src("src/img/**/*.{png,jpg}")
     .pipe(avif(opciones))
-    .pipe(dest("build/img"));
+    .pipe(dest("dist/img"));
 }
 function dev() {
   /* watch("src/scss/header/_header.scss");*/
@@ -49,4 +49,4 @@ exports.imageneswebp = imageneswebp;
 exports.imagenesavif = imagenesavif;
 exports.imagenes = imagenes;
 exports.default = series(css, dev);
-exports.build = series(css, imagenes, imageneswebp, imagenesavif);
+exports.build= series(css, imagenes, imageneswebp, imagenesavif);
