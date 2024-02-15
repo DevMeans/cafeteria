@@ -38,6 +38,11 @@ function imagenesavif() {
     .pipe(avif(opciones))
     .pipe(dest("dist/img"));
 }
+function html() {
+  return src("*.html")
+    .pipe(dest("dist"));
+}
+
 function dev() {
   /* watch("src/scss/header/_header.scss");*/
   watch("src/scss/**/*.scss");
@@ -48,5 +53,6 @@ exports.dev = dev;
 exports.imageneswebp = imageneswebp;
 exports.imagenesavif = imagenesavif;
 exports.imagenes = imagenes;
+exports.html=html
 exports.default = series(css, dev);
-exports.build= series(css, imagenes, imageneswebp, imagenesavif);
+exports.build= series(css,html);
